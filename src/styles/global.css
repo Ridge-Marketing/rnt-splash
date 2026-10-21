@@ -1,0 +1,181 @@
+/* Brand tokens from the rnt-theme Tailwind config */
+:root {
+	--rnt-orange:        #F68B36;
+	--rnt-midnight-blue: #143656;
+	--ultraviolet:       #4E4CA6;
+	--text-gray:         #323C47;
+	--white:             #FFFFFF;
+	--container:         1324px;
+	--gutter:            1.5625rem;
+}
+
+@font-face {
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 200 800;
+	font-display: swap;
+	src: url('/fonts/manrope-latin.woff2') format('woff2');
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { margin: 0; height: 100%; }
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	min-height: 100svh;
+	background: var(--white);
+	color: var(--rnt-midnight-blue);
+	font-family: 'Manrope', system-ui, sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+.container {
+	width: 100%;
+	max-width: var(--container);
+	margin-inline: auto;
+	padding-inline: var(--gutter);
+}
+
+/* Header */
+.masthead {
+	position: relative;
+	z-index: 20;
+	background: var(--white);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+}
+.masthead .container { display: flex; align-items: center; min-height: 88px; }
+.masthead img { display: block; width: 193px; height: auto; }
+
+/* Hero */
+.hero {
+	position: relative;
+	flex: 1;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	min-height: 560px;
+}
+.hero__bg,
+.hero__lines {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+}
+.hero__bg img,
+.hero__lines img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 100% 50%;
+}
+.hero__photo { display: none; }
+
+.hero__content {
+	position: relative;
+	z-index: 10;
+	padding-block: 2.5rem;
+}
+.hero__text {
+	display: flex;
+	flex-direction: column;
+	gap: 2.25rem;
+	max-width: 648px;
+	text-align: center;
+	margin-inline: auto;
+}
+.hero__copy { display: flex; flex-direction: column; gap: 1rem; }
+
+h1 {
+	margin: 0;
+	font-size: 2.25rem;
+	line-height: 2.875rem;
+	font-weight: 700;
+	letter-spacing: -0.01em;
+	text-wrap: balance;
+}
+.hero__copy p {
+	margin: 0;
+	font-size: 1.125rem;
+	line-height: 1.6;
+	letter-spacing: 0.025rem;
+	font-feature-settings: 'liga' 0;
+}
+.hero__copy a { color: var(--ultraviolet); font-weight: 700; }
+
+/* Button-Primary from Figma: white fill, 2px orange border, 15px radius, ultraviolet bold 18px */
+.button {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	align-self: center;
+	padding: 16px 24px 16px 20px;
+	border: 2px solid var(--rnt-orange);
+	border-radius: 15px;
+	background: var(--white);
+	color: var(--ultraviolet);
+	font-size: 18px;
+	font-weight: 700;
+	letter-spacing: 0.36px;
+	text-decoration: none;
+	transition: background-color .2s, color .2s;
+}
+.button svg { width: 26px; height: 25px; }
+.button:hover,
+.button:focus-visible { background: var(--rnt-orange); color: var(--white); }
+.button:focus-visible { outline: 2px solid var(--ultraviolet); outline-offset: 3px; }
+
+/* Footer */
+.footer {
+	position: relative;
+	z-index: 20;
+	background: var(--rnt-midnight-blue);
+	color: var(--white);
+	font-size: 0.875rem;
+}
+.footer .container { padding-block: 1.25rem; text-align: center; }
+.footer p { margin: 0; }
+
+@media (min-width: 1024px) {
+	.hero { min-height: 760px; }
+	.hero__bg img { object-position: 75% 50%; }
+	.hero__lines img { object-position: 75% 50%; }
+	.hero__photo {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 1;
+		width: 620px;
+		height: 100%;
+		object-fit: cover;
+		object-position: left top;
+		filter: drop-shadow(-8px 12px 30px rgba(0, 0, 0, 0.08));
+	}
+	.hero__content { padding-block: 140px; }
+	.hero__text { margin-inline: 0; max-width: 45vw; text-align: left; }
+	.button { align-self: flex-start; }
+	h1 { font-size: 2.875rem; line-height: 3.4375rem; }
+	.hero__copy p { font-size: 1.25rem; line-height: 1.75rem; }
+	.masthead .container { min-height: 112px; }
+}
+@media (min-width: 1280px) {
+	.hero__bg img, .hero__lines img { object-position: right bottom; }
+	.hero__photo { width: 830px; }
+	.hero__content { padding-block: 200px; }
+	.hero__text { max-width: 40vw; }
+	/* Figma: 60px / 68px, -0.6px tracking */
+	h1 { font-size: 3.75rem; line-height: 4.25rem; letter-spacing: -0.6px; }
+}
+@media (min-width: 1324px) {
+	.container { padding-inline: 2rem; }
+}
+@media (min-width: 1366px) {
+	.hero__text { max-width: 648px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.button { transition: none; }
+}

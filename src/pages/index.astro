@@ -1,0 +1,65 @@
+---
+import '../styles/global.css';
+
+const email = 'info@rnt.com';
+const year  = new Date().getFullYear();
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>R&amp;T Deposit Solutions – Temporarily Unavailable</title>
+		<meta name="description" content="The R&T Deposit Solutions website is temporarily unavailable. Contact us at info@rnt.com." />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+	</head>
+	<body>
+		<header class="masthead">
+			<div class="container">
+				<img src="/rnt-logo.svg" width="193" height="46" alt="R&amp;T Deposit Solutions" />
+			</div>
+		</header>
+
+		<main class="hero">
+			<div class="hero__bg" aria-hidden="true">
+				<picture>
+					<source media="(min-width: 1920px)" srcset="/images/Home-Hero-Background-Gradient-1920.jpg" />
+					<source media="(min-width: 1024px)" srcset="/images/Home-Hero-Background-Gradient.webp" type="image/webp" />
+					<img src="/images/Home-Hero-Background-Gradient-Mobile.jpg" alt="" />
+				</picture>
+			</div>
+			<div class="hero__lines" aria-hidden="true">
+				<picture>
+					<source media="(min-width: 1024px)" srcset="/images/Home-Hero-Background-Lines.svg" type="image/svg+xml" />
+					<img src="/images/Home-Hero-Background-Lines-Mobile.svg" alt="" />
+				</picture>
+			</div>
+			<picture>
+				<source media="(max-width: 1023.98px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+				<source media="(min-width: 1920px)" srcset="/images/hero-photo-1920.webp" />
+				<img class="hero__photo" src="/images/hero-photo.webp" alt="" aria-hidden="true" fetchpriority="high" />
+			</picture>
+
+			<div class="container hero__content">
+				<div class="hero__text">
+					<div class="hero__copy">
+						<h1>Our website is temporarily unavailable.</h1>
+						<p>For assistance or inquiries, please contact us at <a href={`mailto:${email}`}>{email}</a>.</p>
+						<p>We apologize for any inconvenience and look forward to being back online soon.</p>
+					</div>
+					<a class="button" href={`mailto:${email}`}>
+						Contact Us
+						<svg width="26" height="25" viewBox="0 0 26 25" fill="none" aria-hidden="true"><path d="M13.461 3.84387L22.2571 12.1569C22.4548 12.3433 22.4548 12.6471 22.2571 12.8335L13.461 21.1465C13.2634 21.3329 12.9457 21.3329 12.748 21.1465L11.915 20.3594C11.7174 20.1729 11.7174 19.8691 11.915 19.6827L18.4309 13.5239H4.08608C3.81076 13.5239 3.58486 13.3099 3.58486 13.0475V11.9359C3.58486 11.6735 3.81076 11.4595 4.08608 11.4595H18.4238L11.915 5.30762C11.7174 5.1212 11.7174 4.8174 11.915 4.63098L12.748 3.84387C12.9457 3.65745 13.2634 3.65745 13.461 3.84387Z" fill="currentColor" /></svg>
+					</a>
+				</div>
+			</div>
+		</main>
+
+		<footer class="footer">
+			<div class="container">
+				<p>&copy; {year} R&amp;T Deposit Solutions. All rights reserved.</p>
+			</div>
+		</footer>
+	</body>
+</html>
