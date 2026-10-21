@@ -46,7 +46,7 @@ body {
 	background: var(--white);
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
 }
-.masthead .container { display: flex; align-items: center; min-height: 88px; }
+.masthead .container { display: flex; align-items: center; justify-content: center; min-height: 88px; }
 .masthead img { display: block; width: 193px; height: auto; }
 
 /* Hero */
@@ -159,7 +159,7 @@ h1 {
 	.button { align-self: flex-start; }
 	h1 { font-size: 2.875rem; line-height: 3.4375rem; }
 	.hero__copy p { font-size: 1.25rem; line-height: 1.75rem; }
-	.masthead .container { min-height: 112px; }
+	.masthead .container { justify-content: flex-start; min-height: 112px; }
 }
 @media (min-width: 1280px) {
 	.hero__bg img, .hero__lines img { object-position: right bottom; }
